@@ -17,3 +17,6 @@ How to use
   docker-compose rm
   or
   docker-compose rm --all
+
+- To run composer from docker
+  docker-compose run composer install 
