@@ -13,6 +13,8 @@ phpfpm:
     image: torniker/phpfpm-5.6
     ports:
       - "9000:9000"
+    links:
+      - mysql
     volumes:
       - ./public:/usr/share/nginx/html
 mysql:
@@ -34,4 +36,8 @@ phpmyadmin:
       MYSQL_USERNAME: admin
       MYSQL_ROOT_PASSWORD: admin
       PMA_ARBITRARY: 1
+composer:
+    image: composer/composer:php5
+    volumes:
+      - ./public:/app
     
